@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drone Data Intelligence — Complete Battle Plan India 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@400;600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #F8F6F1;
+    --bg2:       #F0EDE6;
+    --bg3:       #E8E4DB;
+    --surface:   #FFFFFF;
+    --border:    #D8D3C8;
+    --border2:   #C8C2B4;
+    --ink:       #1A1A2E;
+    --ink2:      #2D3748;
+    --muted:     #6B7280;
+    --teal:      #0D7377;
+    --teal-lt:   #E6F4F4;
+    --amber:     #D97706;
+    --amber-lt:  #FEF3C7;
+    --red:       #B91C1C;
+    --red-lt:    #FEE2E2;
+    --green:     #065F46;
+    --green-lt:  #D1FAE5;
+    --navy:      #1E3A5F;
+    --navy-lt:   #EFF6FF;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono:    'IBM Plex Mono', monospace;
+    --font-body:    'Lato', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* SUBTLE WATERMARK PATTERN */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(13,115,119,0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--ink);
+    color: white;
+    padding: 80px 0 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: -120px; top: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,115,119,0.3) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 2px;
+    background: var(--teal);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 7vw, 84px);
+    font-weight: 900;
+    line-height: 1.0;
+    color: #F8F6F1;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em { color: var(--teal); font-style: normal; }
+
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(248,246,241,0.6);
+    margin-bottom: 36px;
+    max-width: 580px;
+  }
+
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+    border-radius: 2px;
+    border: 1px solid;
+    text-transform: uppercase;
+  }
+
+  .badge-teal { border-color: var(--teal); color: var(--teal); }
+  .badge-amber { border-color: var(--amber); color: var(--amber); }
+  .badge-white { border-color: rgba(248,246,241,0.3); color: rgba(248,246,241,0.7); }
+
+  .war-banner {
+    background: rgba(13,115,119,0.15);
+    border: 1px solid rgba(13,115,119,0.4);
+    border-left: 4px solid var(--teal);
+    padding: 18px 24px;
+    max-width: 640px;
+    border-radius: 3px;
+  }
+
+  .war-banner p {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: rgba(248,246,241,0.85);
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+  }
+
+  /* ─── NAV ─── */
+  .sticky-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--surface);
+    border-bottom: 2px solid var(--ink);
+    padding: 0;
+    box-shadow: 0 2px 12px rgba(26,26,46,0.08);
+  }
+
+  .nav-inner {
+    display: flex; align-items: center; gap: 0;
+    overflow-x: auto; scrollbar-width: none;
+    border-bottom: none;
+  }
+
+  .nav-inner::-webkit-scrollbar { display: none; }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 14px 18px;
+    white-space: nowrap;
+    border-right: 1px solid var(--border);
+    text-transform: uppercase;
+    transition: all 0.15s;
+    display: block;
+  }
+
+  .nav-link:hover { background: var(--bg2); color: var(--teal); }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .sec-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    flex-shrink: 0;
+  }
+
+  .sec-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--teal);
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4.5vw, 54px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  h2 span { color: var(--teal); }
+
+  .section-lead {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 680px;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  p { color: var(--ink2); margin-bottom: 14px; font-size: 15px; }
+
+  strong { color: var(--ink); }
+
+  /* ─── STAT GRID ─── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 36px 0;
+  }
+
+  .stat-cell {
+    background: var(--surface);
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .stat-n {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-l {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ─── ALERTS ─── */
+  .alert {
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin: 24px 0;
+    border-left: 4px solid;
+  }
+
+  .alert strong {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .alert p { font-size: 14px; margin: 0; }
+
+  .alert-teal   { background: var(--teal-lt);  border-color: var(--teal);  }
+  .alert-teal strong { color: var(--teal); }
+  .alert-amber  { background: var(--amber-lt); border-color: var(--amber); }
+  .alert-amber strong { color: var(--amber); }
+  .alert-red    { background: var(--red-lt);   border-color: var(--red);   }
+  .alert-red strong { color: var(--red); }
+  .alert-green  { background: var(--green-lt); border-color: var(--green); }
+  .alert-green strong { color: var(--green); }
+  .alert-navy   { background: var(--navy-lt);  border-color: var(--navy);  }
+  .alert-navy strong { color: var(--navy); }
+
+  /* ─── COMPANY CARDS ─── */
+  .company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .co-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .co-card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(13,115,119,0.1); }
+
+  .co-rank {
+    position: absolute; top: 14px; right: 16px;
+    font-family: var(--font-display);
+    font-size: 44px; font-weight: 900;
+    color: var(--bg3); line-height: 1;
+  }
+
+  .co-name { font-weight: 700; font-size: 14px; color: var(--ink); margin-bottom: 2px; }
+  .co-loc  { font-family: var(--font-mono); font-size: 10px; color: var(--teal); margin-bottom: 10px; letter-spacing: 0.5px; }
+  .co-desc { font-size: 13px; color: var(--muted); margin-bottom: 12px; line-height: 1.55; }
+
+  .co-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+
+  .ctag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+
+  .ct-teal   { color: var(--teal);  background: var(--teal-lt);  border-color: rgba(13,115,119,0.3); }
+  .ct-amber  { color: var(--amber); background: var(--amber-lt); border-color: rgba(217,119,6,0.3);  }
+  .ct-red    { color: var(--red);   background: var(--red-lt);   border-color: rgba(185,28,28,0.3);  }
+  .ct-green  { color: var(--green); background: var(--green-lt); border-color: rgba(6,95,70,0.3);    }
+  .ct-navy   { color: var(--navy);  background: var(--navy-lt);  border-color: rgba(30,58,95,0.3);   }
+  .ct-tn     { color: var(--amber); background: var(--amber-lt); border-color: var(--amber); font-weight: 600; }
+
+  .threat-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+  .threat-label-s { font-family: var(--font-mono); font-size: 10px; color: var(--muted); white-space: nowrap; }
+  .threat-track { flex: 1; height: 5px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+  .threat-fill  { height: 100%; border-radius: 3px; }
+  .tf-high   { background: var(--red);   }
+  .tf-med    { background: var(--amber); }
+  .tf-low    { background: var(--green); }
+  .threat-verdict { font-family: var(--font-mono); font-size: 10px; margin-top: 4px; }
+  .tv-high { color: var(--red);   }
+  .tv-med  { color: var(--amber); }
+  .tv-low  { color: var(--green); }
+
+  /* ─── TABLE ─── */
+  .data-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 13px; }
+
+  .data-table th {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--surface);
+    background: var(--ink);
+    padding: 12px 14px;
+    text-align: left;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+  }
+
+  .data-table td {
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    color: var(--ink2);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .data-table tr:nth-child(even) td { background: var(--bg2); }
+  .data-table tr:hover td { background: var(--teal-lt); }
+
+  .data-table td.bold { font-weight: 700; color: var(--ink); }
+  .data-table td.teal { color: var(--teal); font-weight: 600; }
+  .data-table td.amber { color: var(--amber); font-weight: 600; }
+  .data-table td.red { color: var(--red); font-weight: 600; }
+  .data-table td.green { color: var(--green); font-weight: 600; }
+
+  /* ─── SWORD ─── */
+  .sword-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 32px 0;
+  }
+
+  @media (max-width: 640px) { .sword-grid { grid-template-columns: 1fr; } }
+
+  .sword-card {
+    background: var(--surface);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    border-top: 4px solid;
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sword-card::after {
+    content: attr(data-l);
+    position: absolute; right: -8px; bottom: -16px;
+    font-family: var(--font-display);
+    font-size: 100px; font-weight: 900;
+    line-height: 1; opacity: 0.06;
+  }
+
+  .sw-s { border-top-color: var(--green);  } .sw-s::after { color: var(--green); }
+  .sw-w { border-top-color: var(--red);    } .sw-w::after { color: var(--red);   }
+  .sw-o { border-top-color: var(--teal);   } .sw-o::after { color: var(--teal);  }
+  .sw-r { border-top-color: var(--amber);  } .sw-r::after { color: var(--amber); }
+  .sw-d { border-top-color: var(--navy);   } .sw-d::after { color: var(--navy);  }
+
+  .sword-title {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .sw-s .sword-title { color: var(--green); }
+  .sw-w .sword-title { color: var(--red);   }
+  .sw-o .sword-title { color: var(--teal);  }
+  .sw-r .sword-title { color: var(--amber); }
+  .sw-d .sword-title { color: var(--navy);  }
+
+  .sword-item {
+    display: flex; gap: 10px;
+    margin-bottom: 10px; font-size: 13px; color: var(--ink2);
+  }
+
+  .si-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    margin-top: 7px; flex-shrink: 0;
+  }
+
+  .sw-s .si-dot { background: var(--green); }
+  .sw-w .si-dot { background: var(--red);   }
+  .sw-o .si-dot { background: var(--teal);  }
+  .sw-r .si-dot { background: var(--amber); }
+  .sw-d .si-dot { background: var(--navy);  }
+
+  /* ─── PLAN CARDS ─── */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .plan-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+  }
+
+  .plan-letter {
+    font-family: var(--font-display);
+    font-size: 72px; font-weight: 900;
+    line-height: 1; margin-bottom: 6px;
+  }
+
+  .plan-name {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .plan-a .plan-letter { color: var(--teal);  }
+  .plan-b .plan-letter { color: var(--amber); }
+  .plan-c .plan-letter { color: var(--navy);  }
+  .plan-d .plan-letter { color: var(--green); }
+  .plan-e .plan-letter { color: var(--red);   }
+
+  .plan-a { border-top: 4px solid var(--teal);  }
+  .plan-b { border-top: 4px solid var(--amber); }
+  .plan-c { border-top: 4px solid var(--navy);  }
+  .plan-d { border-top: 4px solid var(--green); }
+  .plan-e { border-top: 4px solid var(--red);   }
+
+  .plan-row {
+    display: flex; gap: 10px;
+    font-size: 13px; color: var(--ink2);
+    margin-bottom: 9px; line-height: 1.5;
+  }
+
+  .plan-row .icon { flex-shrink: 0; }
+
+  /* ─── FINANCE ─── */
+  .fin-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 30px;
+  }
+
+  .fin-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .fin-row:last-child { border: none; }
+  .fin-row .fl { color: var(--muted); }
+  .fin-row .fr { font-family: var(--font-mono); font-weight: 600; color: var(--ink); }
+  .fin-row.total-row { padding-top: 16px; margin-top: 8px; border-top: 2px solid var(--ink); border-bottom: none; }
+  .fin-row.total-row .fl { font-weight: 700; color: var(--ink); font-size: 15px; }
+  .fin-row.total-row .fr { color: var(--teal); font-size: 17px; }
+
+  .fin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+  @media (max-width: 640px) { .fin-grid { grid-template-columns: 1fr; } }
+
+  /* ─── TIMELINE ─── */
+  .timeline { margin: 32px 0; }
+
+  .tl-item { display: flex; gap: 20px; margin-bottom: 0; }
+
+  .tl-spine {
+    display: flex; flex-direction: column; align-items: center;
+    width: 72px; flex-shrink: 0;
+  }
+
+  .tl-tag {
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 1px;
+    color: var(--teal); text-align: center;
+    line-height: 1.3; margin-bottom: 4px;
+  }
+
+  .tl-circle {
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    background: var(--teal); border: 3px solid var(--bg);
+    outline: 2px solid var(--teal);
+    flex-shrink: 0;
+  }
+
+  .tl-line {
+    width: 2px; flex: 1; min-height: 32px;
+    background: linear-gradient(var(--border), transparent);
+  }
+
+  .tl-body { padding-bottom: 40px; flex: 1; padding-top: 2px; }
+  .tl-title { font-weight: 700; font-size: 15px; color: var(--ink); margin-bottom: 6px; }
+  .tl-text  { font-size: 14px; color: var(--muted); }
+
+  /* ─── PAIN POINTS ─── */
+  .pain-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    border-left: 5px solid var(--amber);
+    padding: 26px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pain-num {
+    position: absolute; right: 16px; top: 10px;
+    font-family: var(--font-display);
+    font-size: 60px; font-weight: 900;
+    color: var(--bg3); line-height: 1;
+  }
+
+  .pain-title { font-weight: 700; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
+  .pain-desc  { font-size: 14px; color: var(--muted); margin: 0 0 12px 0; }
+
+  .pain-pill {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 1px;
+    padding: 4px 12px; border-radius: 2px;
+    background: var(--green-lt);
+    color: var(--green);
+    border: 1px solid rgba(6,95,70,0.3);
+    text-transform: uppercase;
+  }
+
+  /* ─── BRAND vs MARKETING ─── */
+  .bm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+  @media (max-width: 640px) { .bm-grid { grid-template-columns: 1fr; } }
+
+  .bm-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+  }
+
+  .bm-card h4 {
+    font-family: var(--font-display);
+    font-size: 26px; font-weight: 900;
+    margin-bottom: 4px;
+  }
+
+  .bm-sub {
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 2px;
+    color: var(--muted); margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .bm-card.brand-c { border-top: 4px solid var(--amber); }
+  .bm-card.brand-c h4 { color: var(--amber); }
+  .bm-card.mktg-c  { border-top: 4px solid var(--teal);  }
+  .bm-card.mktg-c  h4 { color: var(--teal); }
+
+  .chk { display: flex; gap: 10px; font-size: 13px; color: var(--ink2); margin-bottom: 10px; }
+  .chk-icon { color: var(--teal); flex-shrink: 0; font-weight: 700; }
+
+  /* ─── TECH TABLE ─── */
+  .tech-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tech-row:last-child { border: none; }
+
+  .tech-layer {
+    font-family: var(--font-mono);
+    font-size: 11px; font-weight: 600;
+    color: var(--teal);
+    padding: 13px 14px;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    display: flex; align-items: center;
+  }
+
+  .tech-tool { padding: 13px 14px; font-size: 13px; color: var(--ink2); border-right: 1px solid var(--border); }
+  .tech-compliance { padding: 13px 14px; font-size: 12px; color: var(--muted); font-family: var(--font-mono); letter-spacing: 0.3px; }
+
+  /* ─── GAP TABLE ─── */
+  .gap-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 13px; }
+  .gap-table th {
+    background: var(--ink2); color: white;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 12px 14px; text-align: left;
+  }
+  .gap-table td { padding: 13px 14px; border: 1px solid var(--border); color: var(--ink2); vertical-align: top; }
+  .gap-table tr:nth-child(even) td { background: var(--bg2); }
+  .gap-table .opp-h { color: var(--green); font-family: var(--font-mono); font-size: 11px; font-weight: 600; }
+  .gap-table .opp-m { color: var(--amber); font-family: var(--font-mono); font-size: 11px; font-weight: 600; }
+  .gap-table .seg   { font-weight: 700; color: var(--ink); }
+
+  /* ─── FAILURE MODES ─── */
+  .fail-card {
+    background: var(--surface);
+    border: 1px solid var(--red-lt);
+    border-radius: 6px;
+    padding: 22px;
+    margin-bottom: 14px;
+  }
+
+  .fail-card .f-title { font-weight: 700; font-size: 14px; color: var(--red); margin-bottom: 6px; }
+  .fail-card .f-counter { font-size: 13px; color: var(--ink2); }
+  .fail-card .f-counter strong { color: var(--green); }
+
+  /* ─── 30/60/90 ─── */
+  .sprint-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 32px 0; }
+  @media (max-width: 640px) { .sprint-grid { grid-template-columns: 1fr; } }
+
+  .sprint-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px;
+  }
+
+  .sprint-num {
+    font-family: var(--font-display);
+    font-size: 58px; font-weight: 900;
+    line-height: 1; margin-bottom: 4px;
+  }
+
+  .sprint-1 .sprint-num { color: var(--teal);  }
+  .sprint-2 .sprint-num { color: var(--amber); }
+  .sprint-3 .sprint-num { color: var(--navy);  }
+
+  .sprint-1 { border-top: 4px solid var(--teal);  }
+  .sprint-2 { border-top: 4px solid var(--amber); }
+  .sprint-3 { border-top: 4px solid var(--navy);  }
+
+  .sprint-title {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 2px;
+    color: var(--muted); margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  .sprint-item { display: flex; gap: 8px; font-size: 13px; color: var(--ink2); margin-bottom: 8px; }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 1px; background: var(--border);
+    margin: 40px 0;
+  }
+
+  .section-divider {
+    display: flex; align-items: center; gap: 16px;
+    margin: 40px 0;
+  }
+
+  .section-divider span {
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 3px;
+    color: var(--muted); white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  .section-divider::before, .section-divider::after {
+    content: ''; flex: 1; height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: rgba(248,246,241,0.5);
+    padding: 64px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    color: #F8F6F1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+
+  footer h2 em { color: var(--teal); font-style: normal; }
+
+  footer p { color: rgba(248,246,241,0.5); font-size: 14px; max-width: 520px; margin: 0 auto 10px; }
+
+  footer .f-mono {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--teal);
+    margin-top: 32px;
+    display: block;
+  }
+
+  /* ─── HIGHLIGHT QUOTE ─── */
+  .pull-quote {
+    border-left: 4px solid var(--teal);
+    padding: 16px 24px;
+    margin: 28px 0;
+    background: var(--teal-lt);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .pull-quote p {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 700;
+    color: var(--teal); margin: 0;
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .sword-grid { grid-template-columns: 1fr; }
+    .bm-grid { grid-template-columns: 1fr; }
+    .fin-grid { grid-template-columns: 1fr; }
+    .sprint-grid { grid-template-columns: 1fr; }
+    .tech-row { grid-template-columns: 1fr; }
+    .tech-layer { border-right: none; border-bottom: 1px solid var(--border); }
+    .tech-tool { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════ HERO ══════ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Drone Data Intelligence — India 2025 — Complete Battle Plan v2.0</div>
+    <h1>The <em>Intelligence</em><br>Layer Playbook</h1>
+    <p class="hero-sub">2+ Month Team Research · Competitive Deep Dive · SWORD Analysis · 5-Plan Strategy · 30/60/90 Execution · Tamil Nadu First</p>
+    <div class="hero-badges">
+      <span class="badge badge-teal">Tamil Nadu Beachhead</span>
+      <span class="badge badge-amber">₹4.84B Market by 2030</span>
+      <span class="badge badge-white">TNUAVC Gateway</span>
+      <span class="badge badge-white">Drone Rules 2021</span>
+      <span class="badge badge-white">Asset-Light Model</span>
+    </div>
+    <div class="war-banner">
+      <p>YOU ARE NOT A DRONE COMPANY. YOU ARE A SPATIAL INTELLIGENCE COMPANY THAT USES<br>DRONES AS A DATA COLLECTION TOOL. THIS DISTINCTION IS WORTH ₹ CRORES.<br><br>
+      A DRONE FLIGHT → ₹15,000 &nbsp;|&nbsp; A TURBO INTELLIGENCE REPORT → ₹75,000–3,00,000<br><br>
+      SAME DATA. DIFFERENT POSITIONING. ENTIRELY DIFFERENT BUSINESS.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ══════ NAV ══════ -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a href="#market"      class="nav-link">01 Market</a>
+    <a href="#competitors" class="nav-link">02 Pan-India</a>
+    <a href="#tn"          class="nav-link">03 Tamil Nadu</a>
+    <a href="#whatyoudo"   class="nav-link">04 What You Do</a>
+    <a href="#sword"       class="nav-link">05 SWORD</a>
+    <a href="#gaps"        class="nav-link">06 Gap Map</a>
+    <a href="#pain"        class="nav-link">07 Pain Points</a>
+    <a href="#brand"       class="nav-link">08 Brand</a>
+    <a href="#plans"       class="nav-link">09 Plans A–E</a>
+    <a href="#finance"     class="nav-link">10 Financials</a>
+    <a href="#tech"        class="nav-link">11 Tech + Legal</a>
+    <a href="#sprint"      class="nav-link">12 30/60/90 Days</a>
+    <a href="#failures"    class="nav-link">13 Failure Modes</a>
+    <a href="#growth"      class="nav-link">14 Growth Timeline</a>
+    <a href="presentations.html" class="nav-link">📊 Presentations</a>
+  </div>
+</nav>
+
+<!-- ══════ SECTION 01: MARKET ══════ -->
+<section id="market">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">01</span>
+      <span class="sec-tag">Market Reality</span>
+    </div>
+    <h2>The Prize Is <span>Real</span> & Growing</h2>
+    <p class="section-lead">India's drone market is on the fastest regulated growth curve in Asia. The government has made it structurally impossible to ignore drone tech now.</p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-n">$1.58<span style="font-size:22px">B</span></div>
+        <div class="stat-l">India Market 2024</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">$4.84<span style="font-size:22px">B</span></div>
+        <div class="stat-l">India Market 2030</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">20.4<span style="font-size:22px">%</span></div>
+        <div class="stat-l">Overall CAGR</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">25<span style="font-size:22px">%</span></div>
+        <div class="stat-l">Analytics Sub-Market CAGR</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">&lt;10<span style="font-size:22px">%</span></div>
+        <div class="stat-l">Intelligence Layer Penetration</div>
+      </div>
+    </div>
+
+    <div class="alert alert-teal">
+      <strong>⚡ The Most Important Number</strong>
+      <p>The drone analytics sub-market grows at <strong>25% CAGR</strong> — faster than the overall market at 20.4%. The money is shifting from hardware to intelligence. You are entering at the exact right layer at the exact right time. This is structural, not accidental.</p>
+    </div>
+
+    <p><strong>Key policy tailwinds driving non-discretionary demand:</strong> NHAI now mandates monthly drone video recording for all highway construction projects. The SVAMITVA scheme uses drone surveys for nationwide rural land mapping. The Drone Rules 2021 simplified approvals — Green Zones below 400ft need no prior clearance. RPL pilot licence fee dropped to ₹100 for 10 years. Tamil Nadu has emerged as a drone hub with state-backed R&D at Anna University's CASR and the newly formed Tamil Nadu Unmanned Aerial Vehicles Corporation (TNUAVC). This is your single biggest institutional gateway for government work — covered in Section 11.</p>
+
+    <div class="alert alert-amber">
+      <strong>⚠ Critical Framing</strong>
+      <p>90% of Indian drone companies are hardware or flight companies. Less than 10% are doing serious data intelligence. The intelligence layer is wide open. Your competitors are mostly building drones. You are building decisions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 02: PAN INDIA COMPETITORS ══════ -->
+<section id="competitors">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">02</span>
+      <span class="sec-tag">Competitive Landscape — Pan India</span>
+    </div>
+    <h2>Top 10 Drone <span>Companies India</span></h2>
+    <p class="section-lead">Know them precisely. For each one: are they a threat, a partner, or irrelevant? Your survival depends on understanding this correctly.</p>
+
+    <div class="company-grid">
+
+      <div class="co-card">
+        <div class="co-rank">01</div>
+        <div class="co-name">ideaForge Technology</div>
+        <div class="co-loc">📍 Mumbai — NSE Listed · 500,000+ flights</div>
+        <p class="co-desc">India's oldest UAV maker. Defense, industrial mapping, security surveillance. Strong on hardware, weak on analytics. Their FLYGHT franchise program is an opportunity for you.</p>
+        <div class="co-tags"><span class="ctag ct-red">Defense</span><span class="ctag ct-teal">Mapping</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-low" style="width:20%"></div></div></div>
+        <div class="threat-verdict tv-low">LOW — Partner via FLYGHT franchise; add your analytics on top.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">02</div>
+        <div class="co-name">Garuda Aerospace</div>
+        <div class="co-loc">📍 Chennai — 400+ drone fleet · DaaS at scale</div>
+        <p class="co-desc">India's largest drone fleet. Agriculture, inspection, delivery. Chennai-based. They operate at MASSIVE scale but provide raw data — no deep analytics or GIS insight layer. Excellent subcontract target.</p>
+        <div class="co-tags"><span class="ctag ct-tn">TN Based</span><span class="ctag ct-amber">Agriculture</span><span class="ctag ct-teal">Survey</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-med" style="width:45%"></div></div></div>
+        <div class="threat-verdict tv-med">MEDIUM — Offer to be their analytics backend. Don't price-fight them on flights.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">03</div>
+        <div class="co-name">Asteria Aerospace</div>
+        <div class="co-loc">📍 Bangalore — Jio Subsidiary · SkyDeck SaaS</div>
+        <p class="co-desc">Full-stack robotics + AI. Offers SkyDeck SaaS platform for data intelligence. Backed by Reliance/Jio. Closest to your space. But they're enterprise-focused and building lock-in through their own platform.</p>
+        <div class="co-tags"><span class="ctag ct-teal">Analytics</span><span class="ctag ct-navy">Full-Stack</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-high" style="width:70%"></div></div></div>
+        <div class="threat-verdict tv-high">HIGH — Buy their hardware. Never use SkyDeck. Build your own analytics moat to avoid lock-in.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">04</div>
+        <div class="co-name">Skylark Drones</div>
+        <div class="co-loc">📍 Bangalore — Pure-Play Analytics</div>
+        <p class="co-desc">Pure drone data analytics. Survey, inspection, GIS reports, 3D models. Targets large construction and mining enterprises. Premium pricing. No Tamil Nadu presence. Your most direct competitive model to study.</p>
+        <div class="co-tags"><span class="ctag ct-teal">Survey</span><span class="ctag ct-teal">Analytics</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-high" style="width:68%"></div></div></div>
+        <div class="threat-verdict tv-high">HIGH — Study their model. Undercut on price for TN SMEs. Go where they don't go.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">05</div>
+        <div class="co-name">IoTechWorld Avigation</div>
+        <div class="co-loc">📍 Gurugram — First DGCA Type Certificate</div>
+        <p class="co-desc">Agriculture/mapping drones. First DGCA Type Certificate under 2021 rules. AGRINET distribution channel for rural markets. Strong compliance track record — excellent domestic hardware rental partner.</p>
+        <div class="co-tags"><span class="ctag ct-amber">Agriculture</span><span class="ctag ct-teal">Mapping</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-low" style="width:15%"></div></div></div>
+        <div class="threat-verdict tv-low">LOW — Excellent partner for agri mapping. Leverage their AGRINET channel.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">06</div>
+        <div class="co-name">FlytBase</div>
+        <div class="co-loc">📍 Pune — Ops Automation Platform</div>
+        <p class="co-desc">Hardware-agnostic remote operations and fleet automation platform. Do NOT build your own mission management software — license FlytBase. This lets you automate your pipeline and hit 24-48hr SLA.</p>
+        <div class="co-tags"><span class="ctag ct-navy">Software</span><span class="ctag ct-teal">Automation</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-med" style="width:40%"></div></div></div>
+        <div class="threat-verdict tv-med">MEDIUM-PARTNER — Buy their platform. Differentiate via deeper GIS/ERP integration.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">07</div>
+        <div class="co-name">Drone Destination</div>
+        <div class="co-loc">📍 New Delhi — DaaS + Training · 1,000 Drone Hubs</div>
+        <p class="co-desc">DaaS + RPTO pilot training. Ambitious plan for 1,000 drone hubs nationwide. Strong on operations, thin on specialized analytics. Become their specialized GIS/analytics subcontractor for complex projects.</p>
+        <div class="co-tags"><span class="ctag ct-teal">DaaS</span><span class="ctag ct-amber">Training</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-low" style="width:25%"></div></div></div>
+        <div class="threat-verdict tv-low">LOW — Prime subcontract opportunity. Be their analytics backend in South India.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">08</div>
+        <div class="co-name">Sensehawk</div>
+        <div class="co-loc">📍 Bangalore — SoftBank Backed · Solar Analytics</div>
+        <p class="co-desc">Drone analytics specifically for solar farms and renewable energy. Deeply niche, well-funded. No direct competition unless you enter energy vertical. Potential future partner for TN solar corridor projects.</p>
+        <div class="co-tags"><span class="ctag ct-teal">Analytics</span><span class="ctag ct-amber">Energy</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-low" style="width:12%"></div></div></div>
+        <div class="threat-verdict tv-low">VERY LOW — Different niche. Potential future partner for TN solar projects.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">09</div>
+        <div class="co-name">Throttle Aerospace</div>
+        <div class="co-loc">📍 Bangalore — RattanIndia Subsidiary</div>
+        <p class="co-desc">Mapping, surveillance, cargo drones including DOPO mapper and military-grade TALV-TACT. Subsidiary of RattanIndia. Limited analytics depth. Partnerships possible for logistics and disaster relief data needs.</p>
+        <div class="co-tags"><span class="ctag ct-teal">Survey</span><span class="ctag ct-red">Defense</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-med" style="width:38%"></div></div></div>
+        <div class="threat-verdict tv-med">MEDIUM — Study their service model. Niche partnerships for logistics data.</div>
+      </div>
+
+      <div class="co-card">
+        <div class="co-rank">10</div>
+        <div class="co-name">Paras Aerospace</div>
+        <div class="co-loc">📍 Mumbai — Agri Mapping + Multispectral</div>
+        <p class="co-desc">Agri mapping and spraying. Developing indigenous multispectral cameras (compliance advantage in government bids). AgriCopter is their flagship. Bundle their sensors for a procurement edge on agriculture tenders.</p>
+        <div class="co-tags"><span class="ctag ct-amber">Agriculture</span><span class="ctag ct-teal">Mapping</span></div>
+        <div class="threat-row"><span class="threat-label-s">Threat</span><div class="threat-track"><div class="threat-fill tf-low" style="width:20%"></div></div></div>
+        <div class="threat-verdict tv-low">LOW — Bundle their indigenous sensors for government bid compliance advantage.</div>
+      </div>
+
+    </div>
+
+    <div class="alert alert-teal">
+      <strong>🎯 The Key Strategic Insight From This Landscape</strong>
+      <p>Do NOT compete with Garuda or ideaForge on fleet size or flight day-rates — you will lose. Do NOT build your own mission management software — FlytBase exists. You must live entirely in the <strong>high-margin intelligence layer</strong>: the layer that converts raw drone data into decisions, reports, API outputs, and compliance documentation. That layer has no dominant player in Tamil Nadu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 03: TAMIL NADU ══════ -->
+<section id="tn">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">03</span>
+      <span class="sec-tag">Your Home Ground</span>
+    </div>
+    <h2>Tamil Nadu <span>Ecosystem</span></h2>
+    <p class="section-lead">Tamil Nadu is your protected beachhead. Understand every player here — who to partner, who to benchmark, who to watch.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>HQ</th>
+          <th>What They Do</th>
+          <th>Key Fact</th>
+          <th>Your Strategy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">Garuda Aerospace</td>
+          <td>Chennai</td>
+          <td>Large-scale DaaS: agriculture, inspection, delivery. 400+ drones.</td>
+          <td>India's largest fleet. No deep GIS analytics layer.</td>
+          <td class="teal">Offer analytics subcontracting for their overflow. White-label your engine to them.</td>
+        </tr>
+        <tr>
+          <td class="bold">Dhaksha Unmanned Systems</td>
+          <td>Chennai</td>
+          <td>Defense + agri manufacturing. IC-engine agri drones. DGCA training school.</td>
+          <td>10-year Anna University partnership. Local pilot supply.</td>
+          <td class="teal">Partner for rural/agri surveys. Leverage their battery/charging infra in remote TN.</td>
+        </tr>
+        <tr>
+          <td class="bold">Aero360</td>
+          <td>Chennai</td>
+          <td>Custom UAV manufacturing + GIS/spatial analytics. Mining, forestry, disaster mgmt.</td>
+          <td>Closest TN competitor doing actual data intelligence work.</td>
+          <td class="amber">Benchmark closely. Potential coopetition on large govt tenders. Watch their pricing.</td>
+        </tr>
+        <tr>
+          <td class="bold">Tunga Aerospace</td>
+          <td>Chennai</td>
+          <td>Specialized defense and surveillance. Government applications only.</td>
+          <td>Strong govt relationships in TN.</td>
+          <td class="teal">Bid jointly on government work — you as dedicated analytics provider for their flights.</td>
+        </tr>
+        <tr>
+          <td class="bold">Matrix Geo</td>
+          <td>Chennai</td>
+          <td>Government GIS and spatial data. Involved in TN Highway 'e-Pathai' project.</td>
+          <td>Deep govt GIS relationships. TN highways experience.</td>
+          <td class="teal">Partner for deep government GIS integrations. They know the bureaucracy, you know the analytics.</td>
+        </tr>
+        <tr>
+          <td class="bold">Big Bang Boom Solutions</td>
+          <td>Chennai</td>
+          <td>Drone mapping, emergency response surveys, GIS data processing.</td>
+          <td>Emergency response capability.</td>
+          <td class="amber">Monitor. Possible competition. Potential partner for disaster management state contracts.</td>
+        </tr>
+        <tr>
+          <td class="bold">ePlane Company</td>
+          <td>Chennai</td>
+          <td>Hybrid VTOL cargo drones (Atva) — mapping + cargo lift focus. IIT-M spinout.</td>
+          <td>Cutting-edge tech. Mapping + cargo hybrid use case.</td>
+          <td class="teal">Long-term partner opportunity once they scale. Watch for smart city/logistics tie-ins.</td>
+        </tr>
+        <tr>
+          <td class="bold">TNUAVC</td>
+          <td>Chennai — State Govt Body</td>
+          <td>Tamil Nadu Unmanned Aerial Vehicles Corporation — nodal agency for all state drone projects. Anna University CASR partnership.</td>
+          <td>YOUR #1 GOVERNMENT GATEWAY. They manage agricultural, law enforcement, and disaster management drone deployments.</td>
+          <td class="green">PRIORITY TARGET. Pursue TNUAVC empanelment actively. Pitch "Turbo Report" as rapid-response intelligence arm.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-green">
+      <strong>🏆 The Critical Truth About Tamil Nadu</strong>
+      <p>There is no Tamil Nadu-based company positioned purely as a "Drone Data Intelligence" provider for the SME and mid-market. Garuda and Dhaksha are fleet/hardware companies. Aero360 does GIS but targets large enterprise. The mid-market — 50 to 500Cr construction, real estate, quarrying companies — has NO dedicated, affordable intelligence provider. That's your seat. Sit in it now before anyone else does.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 04: WHAT YOU DO ══════ -->
+<section id="whatyoudo">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">04</span>
+      <span class="sec-tag">The Intelligence Layer Defined</span>
+    </div>
+    <h2>What You <span>Actually Do</span></h2>
+    <p class="section-lead">The shift from "drone company" to "spatial intelligence company" changes your pricing, clients, brand, and trajectory permanently.</p>
+
+    <div class="bm-grid">
+      <div class="bm-card brand-c">
+        <h4 style="color: var(--red);">They Do</h4>
+        <div class="bm-sub">What 90% of Indian drone companies actually offer</div>
+        <div class="chk"><span style="color:var(--red);">✗</span> Drone manufacturing and sales</div>
+        <div class="chk"><span style="color:var(--red);">✗</span> Agricultural spraying and seeding</div>
+        <div class="chk"><span style="color:var(--red);">✗</span> Raw aerial photography / video delivery</div>
+        <div class="chk"><span style="color:var(--red);">✗</span> GeoTIFF and .las point cloud file dumps</div>
+        <div class="chk"><span style="color:var(--red);">✗</span> Drone pilot training (RPTO)</div>
+        <div class="chk"><span style="color:var(--red);">✗</span> Logistics delivery trials</div>
+        <div style="margin-top:16px; padding:14px; background: var(--red-lt); border-radius:4px;">
+          <p style="font-size:13px; color:var(--red); margin:0;"><strong>The Gap:</strong> Most offerings stop at orthomosaics and point clouds. Clients are drowning in data but starving for actionable intelligence. Nobody integrates into client ERP or GIS systems.</p>
+        </div>
+      </div>
+      <div class="bm-card mktg-c">
+        <h4>You Do</h4>
+        <div class="bm-sub">What a Drone Data Intelligence company delivers</div>
+        <div class="chk"><span class="chk-icon">✓</span> <div><strong>Data Capture:</strong> Fly (rented) drones with RTK for centimeter-level accuracy</div></div>
+        <div class="chk"><span class="chk-icon">✓</span> <div><strong>Photogrammetry:</strong> Orthomosaics, DEM, DSM — automated pipeline via OpenDroneMap</div></div>
+        <div class="chk"><span class="chk-icon">✓</span> <div><strong>3D Intelligence:</strong> Point clouds, 3D models, digital twins, volumetric calculations</div></div>
+        <div class="chk"><span class="chk-icon">✓</span> <div><strong>GIS Layers:</strong> QGIS processing, spatial analysis, change detection, boundary mapping</div></div>
+        <div class="chk"><span class="chk-icon">✓</span> <div><strong>Turbo Reports:</strong> 24-48hr insight-dense PDFs — measurements, volumes, defects, compliance evidence, recommendations</div></div>
+        <div class="chk"><span class="chk-icon">✓</span> <div><strong>API Delivery:</strong> OGC-compliant WMS/WFS web services plug directly into client ERP and GIS systems</div></div>
+        <div class="chk"><span class="chk-icon">✓</span> <div><strong>Decisions, Not Data:</strong> You deliver what the client needs to ACT — not files to interpret</div></div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Price based on the speed and integration of the data. Not on flight time. A ₹10,000/day drone rental becomes a ₹75,000–3,00,000 deliverable when you add the intelligence layer."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 05: SWORD ══════ -->
+<section id="sword">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">05</span>
+      <span class="sec-tag">Full Self Assessment</span>
+    </div>
+    <h2>S.W.O.R.D <span>Analysis</span></h2>
+    <p class="section-lead">Strengths · Weaknesses · Opportunities · Risks · Direction — built from your team's 2-month deep research</p>
+
+    <div class="sword-grid">
+
+      <div class="sword-card sw-s" data-l="S">
+        <div class="sword-title">Strengths</div>
+        <div class="sword-item"><div class="si-dot"></div><div>Asset-light model: rented drones + freelance GIS = near-zero CAPEX. Cash stays yours.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>End-to-end service: you collect AND analyze. Competitors do only one or the other.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>First-mover in TN's drone intelligence mid-market — no dedicated local competitor at SME level.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>No depreciation drag: upgrade sensor tech per project without hardware write-downs.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Tamil language + local government relationships = institutional trust advantage.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Fast decision-making: no investors to report to, no board approvals. Move in hours.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>GIS engineer skill = core value creation. Very rare and hard for competitors to replicate fast.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Udyam registration unlocks EMD exemptions on government tenders — saves 1–5% of contract value in upfront cash.</div></div>
+      </div>
+
+      <div class="sword-card sw-w" data-l="W">
+        <div class="sword-title">Weaknesses</div>
+        <div class="sword-item"><div class="si-dot"></div><div>Rental dependency: scheduling risk for urgent projects, no guaranteed drone availability during peak season.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Zero portfolio today: first 2 months require free/discounted pilot projects. No case studies yet.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Single GIS freelancer bottleneck: if they're busy or unavailable, you miss delivery SLAs.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Debt situation: cannot absorb long government payment cycles (90–180 days) in early months.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>No DGCA RPAS Operator Certificate yet — legally required before any commercial operation.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Brand is zero: starting from scratch vs Asteria, Skylark, Aero360 with funded marketing.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>No ISO 27001 yet — required for enterprise and government clients handling sensitive spatial data.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>No proprietary software IP yet — using open-source pipeline (risk: competitors can replicate).</div></div>
+      </div>
+
+      <div class="sword-card sw-o" data-l="O">
+        <div class="sword-title">Opportunities</div>
+        <div class="sword-item"><div class="si-dot"></div><div>NHAI mandates monthly drone video for all highway projects — massive non-discretionary pipeline.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>SVAMITVA scheme: village land mapping ongoing across all TN panchayats — government budget exists.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>TNUAVC: Tamil Nadu state's dedicated drone corporation — direct gateway to state-funded projects.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>PM GatiShakti: 400+ infrastructure projects needing surveys with allocated budgets.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Construction boom: TN's TIDCO corridors, Smart Cities (Chennai, Coimbatore, Madurai, Tiruchy, Salem), CMDA expansion.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>RERA compliance: real estate developers need timestamped progress reports for bank loans and registration.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Quarrying and mining: volume/stockpile calculations — high value, recurring monthly requirement.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>Agriculture insurance: PMFBY mandates drone-verified crop damage assessment — early movers will win.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div>2021 Geospatial Guidelines: "Indian Entity" status lets you legally store high-res spatial data locally — regulatory barrier vs foreign software competitors.</div></div>
+      </div>
+
+      <div class="sword-card sw-r" data-l="R">
+        <div class="sword-title">Risks — Brutal Truth</div>
+        <div class="sword-item"><div class="si-dot"></div><div><strong>DGCA Compliance First:</strong> Flying without RPAS Operator Certificate = fine + shutdown + criminal liability. Non-negotiable first step.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div><strong>DPDP Act 2023:</strong> Data breach penalties up to ₹250 crore. Freelancer data leak or NPNT violation can be existential.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div><strong>CERT-In Compliance:</strong> Mandatory 180-day log retention in Indian jurisdiction. Non-compliance = loss of government eligibility.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div><strong>DGFT Import Ban:</strong> Notification 54/2015-2020 prohibits fully-built drone imports. Rental network must use domestic OEMs only.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div><strong>Payment Delays:</strong> Government clients pay 90–180 days late. With existing debt, this is life-threatening in Month 1–3.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div><strong>Monsoon Season:</strong> June–September = 4 months of reduced flyable days in TN. Plan revenue around this.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div><strong>Scope Creep:</strong> "Just a little more analysis" from clients without fixed-scope contracts = you work for free.</div></div>
+        <div class="sword-item"><div class="si-dot"></div><div><strong>Platform Lock-in:</strong> Building your entire pipeline inside Asteria's SkyDeck = they raise prices and own your margins.</div></div>
+      </div>
+
+      <div class="sword-card sw-d" data-l="D" style="grid-column: span 2;">
+        <div class="sword-title">Direction — Your North Star</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <div>
+            <div class="sword-item"><div class="si-dot"></div><div><strong>Position as INSIGHT company, not drone company.</strong> Drones are your tool. Decisions are your product.</div></div>
+            <div class="sword-item"><div class="si-dot"></div><div><strong>Own Tamil Nadu first.</strong> Depth over width. Be #1 in TN before entering another state.</div></div>
+            <div class="sword-item"><div class="si-dot"></div><div><strong>24-48 hour Turbo Report SLA.</strong> This speed premium is your moat. Competitors take weeks. You deliver in 2 days.</div></div>
+            <div class="sword-item"><div class="si-dot"></div><div><strong>API-first delivery.</strong> OGC WMS/WFS integration into client ERP/GIS = stickiness that raw file delivery can never achieve.</div></div>
+          </div>
+          <div>
+            <div class="sword-item"><div class="si-dot"></div><div><strong>Market "Turbo + Secure + Indian Residency"</strong> as your core brand promise. These three words command a price premium.</div></div>
+            <div class="sword-item"><div class="si-dot"></div><div><strong>Target mid-market SMEs</strong> (₹50–500Cr companies) that big players ignore. 1,000+ such companies in TN alone.</div></div>
+            <div class="sword-item"><div class="si-dot"></div><div><strong>Win one government project by Month 6.</strong> TNUAVC empanelment is your credibility engine for the next 2 years.</div></div>
+            <div class="sword-item"><div class="si-dot"></div><div><strong>Build proprietary Turbo Report templates as IP.</strong> Standardize 5 report types so delivery is fast, consistent, and hard to replicate.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 06: GAP MAP ══════ -->
+<section id="gaps">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">06</span>
+      <span class="sec-tag">White Spaces in the Market</span>
+    </div>
+    <h2>The Gap <span>Map</span></h2>
+    <p class="section-lead">Every row in this table is money left on the table by your competition. These gaps are real, verified by your team's research.</p>
+
+    <table class="gap-table">
+      <thead>
+        <tr>
+          <th>Segment</th>
+          <th>Who Needs It</th>
+          <th>Their Pain</th>
+          <th>Why Competitors Ignore Them</th>
+          <th>Opportunity Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="seg">Mid-Size Construction (₹50–500Cr)</td>
+          <td>1,000+ companies in TN alone</td>
+          <td>Site progress, cut/fill volumes, contractor verification, earthwork calculations</td>
+          <td>Big players want enterprise-only; small operators can't serve SME pricing needs</td>
+          <td class="opp-h">🔥 CRITICAL</td>
+        </tr>
+        <tr>
+          <td class="seg">NHAI Highway Projects</td>
+          <td>Contractors on any NH in TN</td>
+          <td>NHAI mandates monthly drone recording — contractors need a vendor who can deliver compliance reports</td>
+          <td>Mandate is new; most contractors don't know compliant vendors exist at affordable rates</td>
+          <td class="opp-h">🔥 CRITICAL</td>
+        </tr>
+        <tr>
+          <td class="seg">Quarrying & Mining SMEs</td>
+          <td>50+ active quarries in TN</td>
+          <td>Monthly stockpile volumes, royalty compliance data, extraction verification</td>
+          <td>Traditional surveys take 2–3 weeks and cost ₹50,000+. Drone firms price too high. No local trust.</td>
+          <td class="opp-h">🔥 CRITICAL</td>
+        </tr>
+        <tr>
+          <td class="seg">Tier 2/3 Municipalities</td>
+          <td>Coimbatore, Salem, Madurai, Tiruchy, Vellore</td>
+          <td>Working off 10–15 year old maps. New buildings, roads, encroachments all uncaptured.</td>
+          <td>They don't know affordable drone survey exists. No local vendor pitching to them in Tamil.</td>
+          <td class="opp-h">🔥 VERY HIGH</td>
+        </tr>
+        <tr>
+          <td class="seg">Real Estate Developers (RERA)</td>
+          <td>100s of TN developers needing RERA compliance</td>
+          <td>Bank-grade proof of construction progress for loan disbursements. RERA submission evidence.</td>
+          <td>No one has packaged this as a specific product for the developer-bank-RERA ecosystem.</td>
+          <td class="opp-m">⚡ HIGH</td>
+        </tr>
+        <tr>
+          <td class="seg">Heritage & Temple Sites</td>
+          <td>TN Tourism, ASI, temple trusts</td>
+          <td>3D documentation, restoration planning, digital twin, VR experience content creation</td>
+          <td>Completely untapped in TN. Nobody pitching this niche. No competition at all.</td>
+          <td class="opp-m">⚡ HIGH (Niche)</td>
+        </tr>
+        <tr>
+          <td class="seg">Agricultural Insurance (PMFBY)</td>
+          <td>Crop insurance companies, FPOs, state agriculture dept</td>
+          <td>Drone-verified crop damage assessment for insurance claims. Mandate exists, implementation slow.</td>
+          <td>Early movers will own this relationship. Government is actively pushing adoption.</td>
+          <td class="opp-m">⚡ HIGH</td>
+        </tr>
+        <tr>
+          <td class="seg">Telecom Tower Inspection</td>
+          <td>Telecom operators in TN (Jio, Airtel, Vi)</td>
+          <td>AI defect detection, digital twin reports, inspection compliance logs for 50,000+ TN towers</td>
+          <td>Requires specialized analytics. Most drone companies just fly and dump images. No structured reporting.</td>
+          <td class="opp-m">⚡ HIGH</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════ SECTION 07: PAIN POINTS ══════ -->
+<section id="pain">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">07</span>
+      <span class="sec-tag">Where It Hurts — Unsolved Problems</span>
+    </div>
+    <h2>Pain Points <span>Nobody Solves</span></h2>
+    <p class="section-lead">These are the specific, real business pains you can uniquely solve right now in Tamil Nadu.</p>
+
+    <div class="pain-card">
+      <div class="pain-num">01</div>
+      <div class="pain-title">"I don't know how much earth my contractor actually moved"</div>
+      <p class="pain-desc">Construction site owners have no way to verify contractor earthwork claims. Traditional survey takes 2–3 weeks. A drone volume report in 48 hours changes their entire financial control. This is a recurring monthly need — which means recurring revenue for you. NHAI contractors now have a legal mandate for this.</p>
+      <span class="pain-pill">✓ You solve this in 48hrs — Price: ₹30,000–75,000 per report</span>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-num">02</div>
+      <div class="pain-title">"How do I prove to the bank my project is 60% complete?"</div>
+      <p class="pain-desc">Real estate developers taking construction-linked loans need bank-grade proof to release tranches. Civil engineer certificates are increasingly distrusted. A drone-generated orthomosaic progress report with timestamped photogrammetry is legally defensible bank-grade evidence. Nobody has packaged this for the developer-bank-RERA ecosystem in India.</p>
+      <span class="pain-pill">✓ First-mover opportunity — Price: ₹50,000–1,50,000 per report</span>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-num">03</div>
+      <div class="pain-title">"Our municipality has no updated map since 2009"</div>
+      <p class="pain-desc">Tier 2/3 towns in Tamil Nadu are planning roads, drainage, and utilities on maps that are 15 years old. A drone orthomosaic + GIS layer update can be done in days. Government budget exists via Smart Cities Mission. No one is pitching this to them in Tamil at affordable rates with OGC-compatible deliverables.</p>
+      <span class="pain-pill">✓ TNUAVC gateway available — Price: ₹5,00,000–25,00,000 per project</span>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-num">04</div>
+      <div class="pain-title">"I paid ₹3 crore for land and I don't know its exact boundary"</div>
+      <p class="pain-desc">Land disputes are pervasive in TN. The traditional patta system has errors. A drone + GIS boundary demarcation report with georeferenced GPS coordinates is legally powerful evidence that can resolve disputes before court. High willingness to pay — these are land buyers who just invested crores.</p>
+      <span class="pain-pill">✓ High urgency, premium pricing — Price: ₹75,000–2,50,000 per site</span>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-num">05</div>
+      <div class="pain-title">"We handle client ERP data — raw GeoTIFFs are useless to us"</div>
+      <p class="pain-desc">Enterprise and government clients are handed massive raw data files they cannot integrate into SAP, Oracle, or their existing GIS systems. They want data delivered via APIs (OGC WMS/WFS) that flow directly into their systems. Standard processing takes days or weeks — your 24-48hr SLA with API integration is worth 3x the price. This is the intelligence layer gap that no Indian competitor is filling systematically.</p>
+      <span class="pain-pill">✓ API integration premium — Price: ₹1,60,000–3,00,000 per engagement</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 08: BRAND VS MARKETING ══════ -->
+<section id="brand">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">08</span>
+      <span class="sec-tag">Two Different Wars</span>
+    </div>
+    <h2>Brand <span>vs</span> Marketing</h2>
+    <p class="section-lead">Branding is WHO you are. Marketing is HOW you reach people. Most startups confuse them. If you have no brand foundation, all marketing spend is wasted.</p>
+
+    <div class="alert alert-amber">
+      <strong>⚡ Your Core Brand Promise — 3 Words</strong>
+      <p><strong>Turbo. Secure. Indian.</strong> — 24-48 hour delivery, Indian data residency (DPDP compliant), 100% domestic processing. These three words beat every foreign platform and most Indian competitors on enterprise and government bids. Build your entire brand language around this.</p>
+    </div>
+
+    <div class="bm-grid">
+      <div class="bm-card brand-c">
+        <h4>Brand</h4>
+        <div class="bm-sub">Who you are — your identity foundation</div>
+        <div class="chk"><span class="chk-icon" style="color:var(--amber);">①</span> <div><strong>Positioning:</strong> "Tamil Nadu's First Drone Data Intelligence Company" — claim this title immediately and make it part of every press release, profile, and pitch.</div></div>
+        <div class="chk"><span class="chk-icon" style="color:var(--amber);">②</span> <div><strong>Name direction:</strong> Avoid "drone" in your brand name — signals intelligence. e.g., "TerraSight", "GeoMind India", "SkyIntel TN", "MaptureLabs"</div></div>
+        <div class="chk"><span class="chk-icon" style="color:var(--amber);">③</span> <div><strong>Visual identity:</strong> Clean, technical, trustworthy — NOT the usual orange-safety-vest drone aesthetic. Think spatial data visualization: navy/teal palette, topographic patterns, precision typography.</div></div>
+        <div class="chk"><span class="chk-icon" style="color:var(--amber);">④</span> <div><strong>Voice:</strong> Precise. Confident. Outcome-focused. "Your project. Mapped. Measured. Decided." — never "We fly drones."</div></div>
+        <div class="chk"><span class="chk-icon" style="color:var(--amber);">⑤</span> <div><strong>Trust signals:</strong> DGCA certificate, Udyam registration, DPDP compliance, Indian data residency, ISO 27001 path (even if in progress) — display all of these prominently.</div></div>
+        <div class="chk"><span class="chk-icon" style="color:var(--amber);">⑥</span> <div><strong>Proof:</strong> Case studies, before/after comparisons, 3D renders, API demos — let the visual output do the selling, not the words.</div></div>
+      </div>
+      <div class="bm-card mktg-c">
+        <h4>Marketing</h4>
+        <div class="bm-sub">How you build pipeline — your channels</div>
+        <div class="chk"><span class="chk-icon">①</span> <div><strong>LinkedIn ABM (Primary):</strong> Account-Based Marketing — target operations managers, project directors, site engineers at TN construction companies. 3 posts/week: before/after maps, 3D models, insight excerpts from real projects.</div></div>
+        <div class="chk"><span class="chk-icon">②</span> <div><strong>Cold Outreach (20/week):</strong> Personalized email + WhatsApp to construction company founders and project managers. Send a sample report — not a brochure. Show, don't tell.</div></div>
+        <div class="chk"><span class="chk-icon">③</span> <div><strong>GeM Portal:</strong> Register as vendor. Set automated alerts for survey/mapping tenders in TN. Government buyers search here. Low competition in your category.</div></div>
+        <div class="chk"><span class="chk-icon">④</span> <div><strong>TNUAVC Empanelment:</strong> Request formal capability demo. Pitch "Turbo Report" as rapid-response analytics for their agricultural, disaster, and law enforcement needs.</div></div>
+        <div class="chk"><span class="chk-icon">⑤</span> <div><strong>CREDAI / CII Tamil Nadu:</strong> Construction industry events. Sponsor a small stall or do a 15-minute speaking slot. Your B2B buyers are there in person.</div></div>
+        <div class="chk"><span class="chk-icon">⑥</span> <div><strong>YouTube / Reels:</strong> "Before survey vs after drone Turbo Report" — drone footage overlaid with data visualizations. Massive organic reach in construction and real estate circles. Post weekly.</div></div>
+        <div class="chk"><span class="chk-icon">⑦</span> <div><strong>Bilingual Website (Tamil + English):</strong> Many TN municipal and government clients prefer Tamil. Being bilingual signals local commitment that Bangalore competitors can never match.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 09: PLANS A–E ══════ -->
+<section id="plans">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">09</span>
+      <span class="sec-tag">Your Full Strategy Portfolio</span>
+    </div>
+    <h2>Plans A, B, C, <span>D & E</span></h2>
+    <p class="section-lead">Execute A at 60%, B at 20%, C at 10%, D at 7%, E at 3%. Never abandon A without running it hard for 3 months. Never put 100% in any single plan.</p>
+
+    <div class="alert alert-navy">
+      <strong>⚡ The Rule for All 5 Plans</strong>
+      <p>Plans are not sequential backups. They run in parallel with different resource allocations. Plan A is your revenue engine. Plans B/C protect your cash flow. Plans D/E build your long-term moat. Review allocation monthly and adjust based on which plan is generating traction.</p>
+    </div>
+
+    <div class="plans-grid">
+
+      <div class="plan-card plan-a">
+        <div class="plan-letter">A</div>
+        <div class="plan-name">Private B2B — Construction & Real Estate</div>
+        <div class="plan-row"><span class="icon">🎯</span><div><strong>Target:</strong> Mid-size construction companies, real estate developers, EPC contractors in TN (₹50–500Cr revenue)</div></div>
+        <div class="plan-row"><span class="icon">💰</span><div><strong>Revenue:</strong> ₹30,000–3,00,000 per project</div></div>
+        <div class="plan-row"><span class="icon">⏱</span><div><strong>Sales cycle:</strong> 2–6 weeks. Fast decisions. Private money.</div></div>
+        <div class="plan-row"><span class="icon">📦</span><div><strong>Products:</strong> Site Progress Reports (48hr), Volume Reports, 3D Site Models, RERA Progress Docs, Land Boundary Maps</div></div>
+        <div class="plan-row"><span class="icon">✅</span><div><strong>Why it works:</strong> Private clients pay in 15–45 days. Recurring monthly needs. No bureaucracy. Start immediately.</div></div>
+        <div class="plan-row"><span class="icon">⚠</span><div><strong>Guard against:</strong> Scope creep. Use fixed-scope contracts. Never quote without a written brief.</div></div>
+      </div>
+
+      <div class="plan-card plan-b">
+        <div class="plan-letter">B</div>
+        <div class="plan-name">Government Tenders B2G — Credibility Engine</div>
+        <div class="plan-row"><span class="icon">🎯</span><div><strong>Target:</strong> TNUAVC, TN PWD, CMDA, TIDCO, Municipalities, TWAD Board, Revenue Dept, NHAI contractors</div></div>
+        <div class="plan-row"><span class="icon">💰</span><div><strong>Revenue:</strong> ₹5,00,000–25,00,000 per project</div></div>
+        <div class="plan-row"><span class="icon">⏱</span><div><strong>Sales cycle:</strong> 3–8 months. Slow but worth it.</div></div>
+        <div class="plan-row"><span class="icon">📦</span><div><strong>Products:</strong> Infrastructure surveys, GIS databases, SVAMITVA panchayat mapping, urban planning data layers</div></div>
+        <div class="plan-row"><span class="icon">✅</span><div><strong>Why it works:</strong> Udyam registration gives EMD exemption (saves 1–5% upfront). CGSS gives collateral-free working capital up to ₹20Cr to bridge payment gaps.</div></div>
+        <div class="plan-row"><span class="icon">⚠</span><div><strong>Guard against:</strong> Don't start until Month 3. Govt pays in 90–180 days. Wait until private revenue covers your burn.</div></div>
+      </div>
+
+      <div class="plan-card plan-c">
+        <div class="plan-letter">C</div>
+        <div class="plan-name">White Label Subcontract B2B2B — Cash Flow Safety Net</div>
+        <div class="plan-row"><span class="icon">🎯</span><div><strong>Target:</strong> Garuda Aerospace, Drone Destination, other drone operators in TN who fly but can't deeply process data</div></div>
+        <div class="plan-row"><span class="icon">💰</span><div><strong>Revenue:</strong> ₹25,000–1,50,000 per engagement</div></div>
+        <div class="plan-row"><span class="icon">⏱</span><div><strong>Sales cycle:</strong> 1–3 weeks. Lowest friction of all plans.</div></div>
+        <div class="plan-row"><span class="icon">📦</span><div><strong>Products:</strong> Data processing only — orthomosaics, DEMs, 3D models, GIS layers, Turbo Reports — white-labeled under their brand</div></div>
+        <div class="plan-row"><span class="icon">✅</span><div><strong>Why it works:</strong> Zero customer acquisition cost. Fills revenue gaps between bigger projects. Builds your processing volume and speed.</div></div>
+        <div class="plan-row"><span class="icon">⚠</span><div><strong>Guard against:</strong> Client poaching. Use strict NDAs and white-label agreements. Watermark all data environments.</div></div>
+      </div>
+
+      <div class="plan-card plan-d">
+        <div class="plan-letter">D</div>
+        <div class="plan-name">Analytics SaaS / Platform API — Long-Term Moat</div>
+        <div class="plan-row"><span class="icon">🎯</span><div><strong>Target:</strong> Enterprise EPC firms, telecom operators, large real estate groups needing recurring monitoring and ERP-integrated data streams</div></div>
+        <div class="plan-row"><span class="icon">💰</span><div><strong>Revenue:</strong> ₹30,000–1,50,000/month recurring retainers</div></div>
+        <div class="plan-row"><span class="icon">⏱</span><div><strong>Timeline:</strong> Month 8–18. Requires portfolio and trust first.</div></div>
+        <div class="plan-row"><span class="icon">📦</span><div><strong>Products:</strong> OGC WMS/WFS API data streams into client SAP/Oracle ERP. Dashboard subscriptions. Monthly monitoring SLAs. Change detection alerts.</div></div>
+        <div class="plan-row"><span class="icon">✅</span><div><strong>Why it works:</strong> Recurring revenue transforms your valuation. API integration creates switching cost — clients cannot easily replace you once integrated into their systems.</div></div>
+        <div class="plan-row"><span class="icon">⚠</span><div><strong>Guard against:</strong> Keep analytics stack portable (hardware-agnostic FlytBase, not Asteria SkyDeck). Maintain your own IP.</div></div>
+      </div>
+
+      <div class="plan-card plan-e">
+        <div class="plan-letter">E</div>
+        <div class="plan-name">Compliance Consulting — Regulatory Advisory</div>
+        <div class="plan-row"><span class="icon">🎯</span><div><strong>Target:</strong> Other drone operators, survey firms, civil engineering companies needing DPDP Act, CERT-In, NPNT, DGCA compliance help</div></div>
+        <div class="plan-row"><span class="icon">💰</span><div><strong>Revenue:</strong> ₹50,000–5,00,000 per engagement</div></div>
+        <div class="plan-row"><span class="icon">⏱</span><div><strong>Timeline:</strong> Month 6+. Requires your own compliance credentials first.</div></div>
+        <div class="plan-row"><span class="icon">📦</span><div><strong>Products:</strong> NPNT SOP development, DPDP data policy frameworks, CERT-In logging setup, ISO 27001 preparation, DGCA operator certificate guidance</div></div>
+        <div class="plan-row"><span class="icon">✅</span><div><strong>Why it works:</strong> You will gain this knowledge by Month 3–6 while implementing it for yourself. Other small drone operators will pay premium for your expertise. No additional CAPEX.</div></div>
+        <div class="plan-row"><span class="icon">⚠</span><div><strong>Guard against:</strong> Don't offer this before you have your own certifications in order. Credibility is everything here.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 10: FINANCIALS ══════ -->
+<section id="finance">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">10</span>
+      <span class="sec-tag">Money Reality — No Sugar Coating</span>
+    </div>
+    <h2>Realistic <span>Financials</span></h2>
+    <p class="section-lead">Every number here is buildable on your asset-light model. The investment is shockingly low. The margins are shockingly good. The risk is in cash flow timing — which is why Plan A (private B2B) must come before Plan B (government).</p>
+
+    <div class="fin-grid">
+      <div class="fin-block">
+        <h3 style="margin-bottom:22px;">Initial Investment</h3>
+        <div class="fin-row"><span class="fl">Company Registration (OPC/Pvt Ltd)</span><span class="fr">₹15,000</span></div>
+        <div class="fin-row"><span class="fl">DGCA RPAS Operator Certificate</span><span class="fr">₹20,000</span></div>
+        <div class="fin-row"><span class="fl">Udyam Registration (MSE)</span><span class="fr">₹0 — Free</span></div>
+        <div class="fin-row"><span class="fl">DPIIT Startup Recognition</span><span class="fr">₹0 — Free</span></div>
+        <div class="fin-row"><span class="fl">GeM Portal Vendor Registration</span><span class="fr">₹0 — Free</span></div>
+        <div class="fin-row"><span class="fl">Website + Domain + Email Pro</span><span class="fr">₹30,000</span></div>
+        <div class="fin-row"><span class="fl">Brand Identity (Logo + Assets)</span><span class="fr">₹25,000</span></div>
+        <div class="fin-row"><span class="fl">GIS Software (QGIS + OpenDroneMap)</span><span class="fr">₹0 — Open Source</span></div>
+        <div class="fin-row"><span class="fl">AWS ap-south-1 Setup (6 months)</span><span class="fr">₹18,000</span></div>
+        <div class="fin-row"><span class="fl">FlytBase License (annual)</span><span class="fr">₹60,000</span></div>
+        <div class="fin-row"><span class="fl">Working Capital Buffer</span><span class="fr">₹1,00,000</span></div>
+        <div class="fin-row total-row"><span class="fl">TOTAL MINIMUM TO LAUNCH</span><span class="fr">₹2.68 Lakhs</span></div>
+      </div>
+      <div class="fin-block">
+        <h3 style="margin-bottom:22px;">Pricing Per Service</h3>
+        <div class="fin-row"><span class="fl">Construction Progress Report (10–50 acres)</span><span class="fr">₹50,000–75,000</span></div>
+        <div class="fin-row"><span class="fl">Volume / Stockpile Report (Mining)</span><span class="fr">₹40,000–90,000</span></div>
+        <div class="fin-row"><span class="fl">Land Boundary Demarcation</span><span class="fr">₹75,000–2,50,000</span></div>
+        <div class="fin-row"><span class="fl">RERA Progress Documentation</span><span class="fr">₹50,000–1,50,000</span></div>
+        <div class="fin-row"><span class="fl">3D Site Model + Digital Twin</span><span class="fr">₹1,00,000–3,00,000</span></div>
+        <div class="fin-row"><span class="fl">Telecom Tower Inspection (AI defects)</span><span class="fr">₹1,60,000–2,00,000</span></div>
+        <div class="fin-row"><span class="fl">Municipal GIS Database Update</span><span class="fr">₹5,00,000–25,00,000</span></div>
+        <div class="fin-row"><span class="fl">API / ERP Integration Retainer</span><span class="fr">₹30,000–1,50,000/month</span></div>
+        <div class="fin-row"><span class="fl">White-Label Processing (per project)</span><span class="fr">₹25,000–1,50,000</span></div>
+        <div class="fin-row"><span class="fl">Drone rental cost (Matrice 350 RTK)</span><span class="fr">₹10,000–11,000/day</span></div>
+        <div class="fin-row total-row"><span class="fl">Gross Margin on ₹75k Project</span><span class="fr">60–72% approx.</span></div>
+      </div>
+    </div>
+
+    <div class="fin-block" style="margin-top:0;">
+      <h3 style="margin-bottom:22px;">Revenue Projection — Conservative Realistic</h3>
+      <div class="fin-row"><span class="fl">Month 1 (Legal setup, brand, zero client work — do not expect revenue)</span><span class="fr" style="color:var(--red);">₹0</span></div>
+      <div class="fin-row"><span class="fl">Month 2 (First pilot project — free or heavily discounted, portfolio building only)</span><span class="fr" style="color:var(--red);">₹0</span></div>
+      <div class="fin-row"><span class="fl">Month 3 (Outreach running, conversations happening — still likely ₹0 paid)</span><span class="fr" style="color:var(--red);">₹0</span></div>
+      <div class="fin-row"><span class="fl">Month 4 (First 1–2 paying projects close after nurturing pipeline)</span><span class="fr" style="color:var(--amber);">₹50,000 – ₹1,50,000</span></div>
+      <div class="fin-row"><span class="fl">Month 5 (2–3 projects, referrals from Month 4 clients begin)</span><span class="fr" style="color:var(--amber);">₹1,50,000 – ₹3,00,000</span></div>
+      <div class="fin-row"><span class="fl">Month 6 (3–5 projects/month — break-even target)</span><span class="fr" style="color:var(--amber);">₹3,00,000 – ₹6,00,000</span></div>
+      <div class="fin-row"><span class="fl">Month 7–9 (Stable private clients + first govt project in pipeline)</span><span class="fr" style="color:var(--green);">₹5,00,000 – ₹10,00,000</span></div>
+      <div class="fin-row"><span class="fl">Month 10–12 (Full portfolio: private + govt + white-label)</span><span class="fr" style="color:var(--green);">₹8,00,000 – ₹15,00,000</span></div>
+      <div class="fin-row total-row"><span class="fl">Year 1 Realistic Revenue Target (Months 4–12 only)</span><span class="fr">₹35 – ₹60 Lakhs</span></div>
+    </div>
+
+    <div class="alert alert-red">
+      <strong>⚠ Cash Flow Warning — Your Survival Rule</strong>
+      <p>Because of existing debt, you CANNOT depend on government projects in Month 1–3. They pay in 90–180 days. Private construction clients pay in 15–45 days. <strong>Focus ALL Month 1–3 energy on private sector B2B (Plan A).</strong> Start government pipeline in Month 2 in parallel, but do not count government revenue until Month 5–6 minimum. Use CGSS for collateral-free working capital as a bridge if needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 11: TECH + LEGAL ══════ -->
+<section id="tech">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">11</span>
+      <span class="sec-tag">Tech Stack + Compliance Blueprint</span>
+    </div>
+    <h2>Technology &amp; <span>Legal Architecture</span></h2>
+    <p class="section-lead">Compliance is not just paperwork. It is a sales tool and a survival mechanism. Map every tech decision to a compliance requirement to win government bids.</p>
+
+    <div class="alert alert-teal">
+      <strong>🏛 TNUAVC — Your Government Gateway</strong>
+      <p>The Tamil Nadu Unmanned Aerial Vehicles Corporation (TNUAVC) is a state government partnership with Anna University's CASR. It is the nodal agency for all public-sector drone projects in TN — agricultural surveys, law enforcement, disaster management. <strong>TNUAVC empanelment is your biggest single unlock for B2G revenue.</strong> Pursue it from Month 2. Pitch your 24-48hr Turbo Report capability as their rapid-response intelligence arm.</p>
+    </div>
+
+    <div style="border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 28px 0;">
+      <div style="display:grid; grid-template-columns: 180px 1fr 1fr; background: var(--ink);">
+        <div style="padding:10px 14px; font-family:var(--font-mono); font-size:10px; letter-spacing:2px; color:white; text-transform:uppercase;">Layer</div>
+        <div style="padding:10px 14px; font-family:var(--font-mono); font-size:10px; letter-spacing:2px; color:white; text-transform:uppercase; border-left:1px solid rgba(255,255,255,0.1);">Technology / Policy</div>
+        <div style="padding:10px 14px; font-family:var(--font-mono); font-size:10px; letter-spacing:2px; color:white; text-transform:uppercase; border-left:1px solid rgba(255,255,255,0.1);">Compliance Target</div>
+      </div>
+      <div class="tech-row"><div class="tech-layer">Flight Ops</div><div class="tech-tool">FlytBase (license, don't build) — automates mission planning, fleet management, and remote operations for rented drones</div><div class="tech-compliance">DGCA Drone Rules 2021 / NPNT compliance — Digital Sky permission artefact loaded before every flight</div></div>
+      <div class="tech-row"><div class="tech-layer">Data Capture</div><div class="tech-tool">RTK-enabled drones (ideaForge, IoTechWorld rental) for centimeter-level accuracy. Domestic OEMs only.</div><div class="tech-compliance">DGFT Notification 54/2015-2020 — no fully-built foreign drones. Indian OEMs only for NPNT compliance.</div></div>
+      <div class="tech-row"><div class="tech-layer">Photogrammetry</div><div class="tech-tool">OpenDroneMap (open-source) → Orthomosaic, DEM, DSM, 3D Point Cloud. Free. Portable. No vendor lock-in.</div><div class="tech-compliance">No specific mandate. Keep stack open-source and portable — avoid Asteria SkyDeck lock-in.</div></div>
+      <div class="tech-row"><div class="tech-layer">GIS Analysis</div><div class="tech-tool">QGIS + PostGIS (open-source). Spatial analysis, change detection, boundary processing, multi-layer GIS output.</div><div class="tech-compliance">2021 Geospatial Guidelines — Indian Entity storing high-res spatial data locally. Legal data sovereignty advantage.</div></div>
+      <div class="tech-row"><div class="tech-layer">Data Delivery</div><div class="tech-tool">OGC WMS / WFS web services + REST APIs → plug directly into client SAP, Oracle, or GIS platform</div><div class="tech-compliance">Standard government tender requirement. API-first delivery = procurement eligibility for smart city projects.</div></div>
+      <div class="tech-row"><div class="tech-layer">Cloud Hosting</div><div class="tech-tool">AWS ap-south-1 (Mumbai) exclusively. S3 Object Lock for immutable storage. CloudTrail for audit logs.</div><div class="tech-compliance">DPDP Act 2023 (data residency) + CERT-In Directive 20(3)/2022 (180-day log retention, Indian jurisdiction).</div></div>
+      <div class="tech-row"><div class="tech-layer">Time Sync</div><div class="tech-tool">Sync all compute instances to NIC / NPL NTP servers (National Informatics Centre / National Physical Laboratory)</div><div class="tech-compliance">CERT-In Directive 20(3)/2022 — mandatory NTP synchronization requirement for all ICT systems.</div></div>
+      <div class="tech-row"><div class="tech-layer">Data Security</div><div class="tech-tool">Role-Based Access Control (RBAC) for freelancers. Watermarked data environments. NDAs + strict SOPs.</div><div class="tech-compliance">DPDP Act 2023 — fines up to ₹250 crore for breach. CERT-In — 6-hour incident reporting mandate.</div></div>
+      <div class="tech-row"><div class="tech-layer">Certification</div><div class="tech-tool">ISO 27001 Information Security certification. Budget ₹2,00,000–9,00,000. Begin process by Month 4.</div><div class="tech-compliance">Enterprise and government client requirement. Non-negotiable for large contracts. Massive brand trust signal.</div></div>
+    </div>
+
+    <div class="section-divider"><span>Financial Protections</span></div>
+
+    <div class="alert alert-green">
+      <strong>💰 Your 4 Financial Protection Registrations</strong>
+      <p><strong>1. Udyam Registration (MSE):</strong> Get this in Week 1. Gives you full exemption from paying Earnest Money Deposits (EMD) on government tenders — saves 1–5% of contract value in upfront cash on every bid. Free to register.<br><br>
+      <strong>2. DPIIT Startup Recognition:</strong> Free. Unlocks Credit Guarantee Scheme for Startups (CGSS) — collateral-free debt up to ₹20 crore to bridge government payment delays.<br><br>
+      <strong>3. GeM Portal Vendor Registration:</strong> Free. Government buyers are mandated to buy from GeM for many service categories including survey/mapping. Set automated tender alerts for TN.<br><br>
+      <strong>4. TNUAVC Empanelment:</strong> Apply formally. State-level direct access to TN government drone projects without open tender competition for empaneled vendors.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 12: 30/60/90 ══════ -->
+<section id="sprint">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">12</span>
+      <span class="sec-tag">Execution Blueprint</span>
+    </div>
+    <h2>30 / 60 / <span>90 Days</span></h2>
+    <p class="section-lead">This is the exact sequence. Do not reorder it. Each sprint unlocks the next one. This is your playbook from today.</p>
+
+    <div class="sprint-grid">
+      <div class="sprint-card sprint-1">
+        <div class="sprint-num">30</div>
+        <div class="sprint-title">Days — Foundation & Protection</div>
+        <div class="sprint-item"><span>①</span><div>Register Udyam (MSE) immediately — EMD exemption on all govt bids</div></div>
+        <div class="sprint-item"><span>②</span><div>Apply for DPIIT Startup Recognition — unlocks CGSS collateral-free debt</div></div>
+        <div class="sprint-item"><span>③</span><div>Register OPC or Pvt Ltd company + GST + Business bank account</div></div>
+        <div class="sprint-item"><span>④</span><div>Apply for DGCA RPAS Operator Certificate (online application)</div></div>
+        <div class="sprint-item"><span>⑤</span><div>Sign MOUs with 3 domestic drone rental partners (ideaForge/IoTechWorld/Dhaksha) — confirm NPNT-compliant hardware</div></div>
+        <div class="sprint-item"><span>⑥</span><div>Interview and onboard 5 freelance GIS engineers — sign NDAs + rate cards + strict SOPs</div></div>
+        <div class="sprint-item"><span>⑦</span><div>Build brand identity + website (bilingual Tamil/English) emphasizing "Turbo · Secure · Indian"</div></div>
+      </div>
+      <div class="sprint-card sprint-2">
+        <div class="sprint-num">60</div>
+        <div class="sprint-title">Days — Build & Prove</div>
+        <div class="sprint-item"><span>①</span><div>Execute first 3 mining/quarry/construction POCs in Tamil Nadu (free or 50% discount — portfolio investment)</div></div>
+        <div class="sprint-item"><span>②</span><div>Launch LinkedIn ABM: 3 posts/week — before/after drone maps, 3D models, insight excerpts</div></div>
+        <div class="sprint-item"><span>③</span><div>Stand up AWS ap-south-1 environment with 180-day immutable S3 Object Lock logging and NPL NTP sync</div></div>
+        <div class="sprint-item"><span>④</span><div>Register on GeM portal as vendor — set automated TN survey/mapping tender alerts</div></div>
+        <div class="sprint-item"><span>⑤</span><div>License FlytBase for pipeline automation — do NOT build your own mission management software</div></div>
+        <div class="sprint-item"><span>⑥</span><div>Cold outreach: 20 targeted contacts/week — construction companies, site engineers, project directors in TN</div></div>
+        <div class="sprint-item"><span>⑦</span><div>Close first 1–2 paying private sector projects. Minimum ₹50,000 each. Deliver perfectly.</div></div>
+      </div>
+      <div class="sprint-card sprint-3">
+        <div class="sprint-num">90</div>
+        <div class="sprint-title">Days — Scale & Institutionalize</div>
+        <div class="sprint-item"><span>①</span><div>Complete 7 additional POC/paying projects. Revenue ≥ ₹3,00,000 for the month.</div></div>
+        <div class="sprint-item"><span>②</span><div>Publish 3 detailed case studies with data proof — volumetric accuracy, turnaround speed, client outcome</div></div>
+        <div class="sprint-item"><span>③</span><div>Request formal TNUAVC capability demonstration meeting — bring Turbo Report samples</div></div>
+        <div class="sprint-item"><span>④</span><div>Initiate ISO 27001 certification process — even starting this is a credibility signal for enterprise bids</div></div>
+        <div class="sprint-item"><span>⑤</span><div>Submit first GeM tender bid or government proposal (PWD, municipal corporation, NHAI contractor)</div></div>
+        <div class="sprint-item"><span>⑥</span><div>Approach Garuda Aerospace and Drone Destination for white-label analytics subcontract arrangement (Plan C)</div></div>
+        <div class="sprint-item"><span>⑦</span><div>Appoint 1 senior QA lead (could be your GIS freelancer promoted) — their only job: verify every report before client delivery</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 13: FAILURE MODES ══════ -->
+<section id="failures">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">13</span>
+      <span class="sec-tag">Know Before They Happen</span>
+    </div>
+    <h2>Failure Modes &amp; <span>Counter-Strategies</span></h2>
+    <p class="section-lead">Your team identified these. Pre-wire your response before each failure mode happens — not after.</p>
+
+    <div class="fail-card">
+      <div class="f-title">❌ Failure Mode 1: The Price Race to the Bottom</div>
+      <p class="f-desc">You try to compete with Garuda Aerospace on per-acre flight costs. You lower your prices to win. You go bankrupt.</p>
+      <p class="f-counter"><strong style="color:var(--green);">Counter-Strategy:</strong> Hold your premium pricing. You do not sell flights — you sell the API integration, the 24-hour SLA, and the compliance-ready report. If a client refuses: <strong>execute Plan C</strong> — offer to white-label your analytics engine to Garuda themselves. Turn a competitor into a revenue stream.</p>
+    </div>
+
+    <div class="fail-card">
+      <div class="f-title">❌ Failure Mode 2: Platform Lock-In (Asteria SkyDeck)</div>
+      <p class="f-desc">You build your entire workflow inside Asteria's SkyDeck platform. They raise API prices or restrict access. Your margins vanish instantly.</p>
+      <p class="f-counter"><strong style="color:var(--green);">Counter-Strategy:</strong> Keep your analytics stack <strong>hardware-agnostic and portable</strong> from Day 1. Use FlytBase (not SkyDeck) for fleet management. Use OpenDroneMap + QGIS (not Asteria's cloud) for processing. Buy their hardware if it's the best option. Never let any vendor own your intelligence layer.</p>
+    </div>
+
+    <div class="fail-card">
+      <div class="f-title">❌ Failure Mode 3: Data Breach or NPNT Violation</div>
+      <p class="f-desc">A freelancer leaks client spatial data, or a rented drone enters a Red Zone without NPNT digital permission. DPDP Act fine up to ₹250 crore. DGCA suspension. Your company is finished.</p>
+      <p class="f-counter"><strong style="color:var(--green);">Counter-Strategy:</strong> Enforce mandatory pre-flight Digital Sky checklist on every rental operator you use. Implement strict RBAC — freelancers get watermarked data environments, never raw client data. AWS S3 Object Lock for all logs. If breach occurs: activate your CERT-In incident response playbook (you must build this before you need it).</p>
+    </div>
+
+    <div class="fail-card">
+      <div class="f-title">❌ Failure Mode 4: Cash Flow Collapse (Government Slow Payment)</div>
+      <p class="f-desc">You win a large government contract in Month 4. The work is done. Payment comes in Month 11. Your burn rate eats your capital. You cannot pay the freelancer or the rental.</p>
+      <p class="f-counter"><strong style="color:var(--green);">Counter-Strategy:</strong> Balance portfolio: minimum 50% private enterprise clients (15–45 day payment) at all times. Use CGSS collateral-free working capital to bridge government payment gaps. Udyam EMD exemption prevents upfront capital drain on bid deposits. Never let government projects exceed 50% of active revenue pipeline in Year 1.</p>
+    </div>
+
+    <div class="fail-card">
+      <div class="f-title">❌ Failure Mode 5: GIS Freelancer Becomes a Bottleneck</div>
+      <p class="f-desc">You get 5 projects simultaneously. Your one GIS engineer is overwhelmed. Delivery slips. Clients cancel. Reputation damaged before it's even built.</p>
+      <p class="f-counter"><strong style="color:var(--green);">Counter-Strategy:</strong> Onboard and vet 5 freelance GIS engineers from Day 1 — not one. Build strict SOPs and standardized Turbo Report templates so any trained engineer can produce consistent output. Appoint a QA lead whose only job is verification. By Month 7–8, hire the best freelancer as your first full-time GIS analyst.</p>
+    </div>
+
+    <div class="fail-card">
+      <div class="f-title">❌ Failure Mode 6: Scope Creep Destroys Your Margins</div>
+      <p class="f-desc">Client says "just one more analysis" after the project is delivered. You say yes to be nice. You do free work for 3 extra weeks. ₹75,000 project becomes a ₹15,000 effective rate.</p>
+      <p class="f-counter"><strong style="color:var(--green);">Counter-Strategy:</strong> Fixed-scope contracts for every engagement. Every deliverable listed with a line item. Change requests = new purchase order, minimum ₹15,000. State this in your proposal template. Clients who respect your work will respect your scope. Those who don't were never your customers anyway.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 14: GROWTH TIMELINE ══════ -->
+<section id="growth">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="sec-num">14</span>
+      <span class="sec-tag">Month by Month</span>
+    </div>
+    <h2>12-Month <span>Growth Timeline</span></h2>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">WEEK<br>1–2</div>
+          <div class="tl-circle"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">Legal Foundation — Do This First, Nothing Else</div>
+          <p class="tl-text">Udyam registration. DPIIT startup recognition. Company registration (OPC). DGCA RPAS Operator Certificate application. Business bank account. All four free/cheap. All four unlock massive future advantages. Without these, you cannot legally operate or bid on anything.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">WEEK<br>3–4</div>
+          <div class="tl-circle"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">Brand + Tools + Team Setup</div>
+          <p class="tl-text">Brand identity. Bilingual Tamil/English website. 5 GIS freelancer NDAs signed. 3 drone rental MOUs signed (domestic OEMs only). AWS ap-south-1 environment live. FlytBase licensed. Turbo Report template version 1 ready. GeM portal vendor registration.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">MONTH<br>1</div>
+          <div class="tl-circle"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">First Project — Even Free. The Portfolio Is Everything.</div>
+          <p class="tl-text">Find a construction site through your network. Offer at 50% discount or free. The output — a real Turbo Report with 3D visualization — is your sales tool for the next 6 months. Without this, you cannot sell. The cost of execution (₹20,000) is your single best marketing investment. Turn it into a LinkedIn post, a case study PDF, and a sample report for cold outreach.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">MONTH<br>2</div>
+          <div class="tl-circle" style="background:var(--amber)"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">Outreach Machine + Government Pipeline Start</div>
+          <p class="tl-text">20 targeted LinkedIn + email + WhatsApp contacts per week. Send sample reports, not brochures. Target project managers, site engineers, construction company founders in TN. Parallel: identify TNUAVC contact, schedule capability demo meeting. Submit first GeM tender alert setup. Goal: 5–10 active conversations by end of month.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">MONTH<br>3</div>
+          <div class="tl-circle" style="background:var(--amber)"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">First Paying Client — Your Proof of Concept</div>
+          <p class="tl-text">Close 1–2 paying private projects at ₹50,000+ each. Deliver above expectations. Get a written testimonial and permission to use as a case study. This is your inflection point. Every project after this becomes easier because you have proof. Referrals begin here.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">MONTH<br>4–5</div>
+          <div class="tl-circle"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">Referral Engine + TNUAVC Pitch + Plan C Launch</div>
+          <p class="tl-text">Referrals from Month 3 clients multiply pipeline. TNUAVC capability demo meeting — show sample reports, demonstrate 24-48hr SLA. Approach Garuda and Drone Destination for white-label analytics subcontract (Plan C). Begin ISO 27001 process (budget ₹2–9L, start the paperwork). Target: 3–5 paying private projects per month consistently.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">MONTH<br>6</div>
+          <div class="tl-circle" style="background:var(--green)"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">Break-Even — The First Real Milestone</div>
+          <p class="tl-text">Revenue covers all costs including your salary. If not reached: diagnose one variable at a time. Is outreach volume insufficient? Is pricing too high? Is it the wrong segment? Do NOT pivot the entire model — fix the one broken variable. Seek a business mentor at this exact point. Use CGSS debt if cash flow is strained from a government pipeline building.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">MONTH<br>7–9</div>
+          <div class="tl-circle"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">First Full-Time Hire + Government Win</div>
+          <p class="tl-text">Hire first full-time junior GIS analyst (₹25,000–35,000/month) — promote your best freelancer. This doubles output capacity. Win first government project (even ₹5–10L). This unlocks ability to bid on larger contracts. Begin building Turbo Report v2 with standardized API delivery templates. Revenue target: ₹8–12L/month.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-spine">
+          <div class="tl-tag">MONTH<br>10–12</div>
+          <div class="tl-circle" style="background:var(--teal)"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-title">Platform + Expansion — You Are Now a Real Company</div>
+          <p class="tl-text">Launch Plan D: first API/ERP integration retainer clients. Begin Plan E: compliance consulting for other operators. ISO 27001 certification complete or in final stage. Evaluate adjacent state expansion (Kerala, Karnataka, or AP). Consider Series A conversations if revenue is ₹10L+/month consistently and growing. Annual revenue: ₹50–80 Lakhs. Company headcount: 3–5 people.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div class="wrap">
+    <div class="sec-tag" style="justify-content:center; display:block; text-align:center; margin-bottom:16px;">Final Word</div>
+    <h2>You Have Everything<br><em>You Need.</em></h2>
+    <p>Rented drones. GIS skill. Low cost base. An underserved Tamil Nadu market with no local competitor doing real data intelligence for the mid-market. The gap is real. The pain is real. The money is real.</p>
+    <p>Your asset-light model is not a weakness — it is a structural advantage. No depreciation. No hardware write-downs. No investors slowing your decisions. You can upgrade sensors per project and move in hours while funded competitors move in weeks.</p>
+    <p style="color:rgba(248,246,241,0.8); font-weight:700; font-size:16px; margin-top: 24px;">The only remaining question is execution speed. Move now.</p>
+    <div style="margin: 40px auto 0; max-width: 600px; background: rgba(13,115,119,0.2); border: 1px solid rgba(13,115,119,0.4); border-left: 4px solid var(--teal); padding: 20px 24px; border-radius: 3px; text-align:left;">
+      <p style="font-family:var(--font-mono); font-size:12px; color:rgba(248,246,241,0.9); margin:0; line-height:2;">
+        PLAN A → PRIVATE B2B CONSTRUCTION (START THIS WEEK)<br>
+        PLAN B → GOVERNMENT TENDERS VIA TNUAVC / GEM (MONTH 2)<br>
+        PLAN C → WHITE LABEL FOR GARUDA / DRONE DESTINATION (MONTH 2)<br>
+        PLAN D → API + ERP RETAINER PLATFORM (MONTH 8)<br>
+        PLAN E → COMPLIANCE CONSULTING FOR DRONE OPERATORS (MONTH 6)<br><br>
+        REGISTER: UDYAM → DPIIT → DGCA → GEM → TNUAVC → ISO 27001<br><br>
+        DO NOT DIE WITH YOUR PLAN IN YOUR HEAD. EXECUTE. ADAPT. WIN.
+      </p>
+    </div>
+    <span class="f-mono">DRONE DATA INTELLIGENCE — INDIA COMPLETE BATTLE PLAN v2.0 — 2+ MONTH TEAM RESEARCH INTEGRATED</span>
+  </div>
+</footer>
+
+</body>
+</html>

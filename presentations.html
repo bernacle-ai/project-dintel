@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentations — Drone Data Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@400;600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8F6F1;
+    --surface: #FFFFFF;
+    --border: #D8D3C8;
+    --ink: #1A1A2E;
+    --ink2: #2D3748;
+    --muted: #6B7280;
+    --teal: #0D7377;
+    --teal-lt: #E6F4F4;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --font-body: 'Lato', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 40px 20px;
+  }
+
+  .wrap { max-width: 1200px; margin: 0 auto; }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  h1 span { color: var(--teal); }
+
+  .lead {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--teal);
+    text-decoration: none;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .back-link:hover { text-decoration: underline; }
+
+  .presentations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .ppt-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .ppt-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 4px 20px rgba(13,115,119,0.1);
+  }
+
+  .ppt-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .ppt-desc {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .ppt-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  .ppt-btn {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    padding: 10px 20px;
+    background: var(--teal);
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+
+  .ppt-btn:hover { background: #0a5a5d; }
+
+  .viewer-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .viewer-modal.active { display: flex; align-items: center; justify-content: center; }
+
+  .viewer-content {
+    width: 100%;
+    max-width: 1200px;
+    height: 90vh;
+    background: white;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .close-viewer {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: var(--teal);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .close-viewer:hover { background: #0a5a5d; }
+
+  .viewer-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+  }
+
+  .empty-state h2 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a href="index.html" class="back-link">← Back to Main</a>
+  
+  <h1>Presentations <span>Library</span></h1>
+  <p class="lead">View and manage all uploaded presentations</p>
+
+  <div id="presentations-container" class="presentations-grid">
+    <div class="empty-state">
+      <h2>Loading presentations...</h2>
+      <p>Please wait while we fetch your content.</p>
+    </div>
+  </div>
+</div>
+
+<div id="viewer-modal" class="viewer-modal">
+  <div class="viewer-content">
+    <button class="close-viewer" onclick="closeViewer()">✕ Close</button>
+    <iframe id="ppt-viewer" class="viewer-frame"></iframe>
+  </div>
+</div>
+
+<script>
+  // Fetch presentations from the presentations folder
+  async function loadPresentations() {
+    const container = document.getElementById('presentations-container');
+    
+    try {
+      // This will read markdown files created by Decap CMS
+      const response = await fetch('/presentations/');
+      
+      // For now, show a placeholder since we need backend support
+      // In production, you'd parse the markdown files or use a build step
+      container.innerHTML = `
+        <div class="empty-state">
+          <h2>No presentations yet</h2>
+          <p>Upload your first presentation via the <a href="/admin" style="color: var(--teal);">admin panel</a>.</p>
+        </div>
+      `;
+      
+    } catch (error) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <h2>Ready for presentations</h2>
+          <p>Go to <a href="/admin" style="color: var(--teal); font-weight: 600;">/admin</a> to upload your first PPT file.</p>
+        </div>
+      `;
+    }
+  }
+
+  function openViewer(pptUrl, title) {
+    const modal = document.getElementById('viewer-modal');
+    const iframe = document.getElementById('ppt-viewer');
+    
+    // Use Microsoft Office Online Viewer
+    const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(pptUrl)}`;
+    iframe.src = viewerUrl;
+    modal.classList.add('active');
+  }
+
+  function closeViewer() {
+    const modal = document.getElementById('viewer-modal');
+    const iframe = document.getElementById('ppt-viewer');
+    iframe.src = '';
+    modal.classList.remove('active');
+  }
+
+  // Close on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeViewer();
+  });
+
+  // Load presentations on page load
+  loadPresentations();
+</script>
+
+</body>
+</html>
