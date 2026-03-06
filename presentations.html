@@ -202,57 +202,130 @@
 </div>
 
 <script>
-  // Fetch presentations from the presentations folder
+  // IndexedDB setup
+  const DB_NAME = 'drone_presentations_db';
+  const DB_VERSION = 1;
+  const STORE_NAME = 'presentations';
+  let db;
+
+  // Initialize IndexedDB
+  function initDB() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(DB_NAME, DB_VERSION);
+      
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => {
+        db = request.result;
+        resolve(db);
+      };
+      
+      request.onupgradeneeded = (event) => {
+        db = event.target.result;
+        if (!db.objectStoreNames.contains(STORE_NAME)) {
+          const objectStore = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+          objectStore.createIndex('uploadDate', 'uploadDate', { unique: false });
+        }
+      };
+    });
+  }
+
+  // Get all presentations
+  function getPresentations() {
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction([STORE_NAME], 'readonly');
+      const objectStore = transaction.objectStore(STORE_NAME);
+      const request = objectStore.getAll();
+      
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  // Fetch presentations from IndexedDB
   async function loadPresentations() {
     const container = document.getElementById('presentations-container');
     
     try {
-      // This will read markdown files created by Decap CMS
-      const response = await fetch('/presentations/');
+      const presentations = await getPresentations();
       
-      // For now, show a placeholder since we need backend support
-      // In production, you'd parse the markdown files or use a build step
-      container.innerHTML = `
-        <div class="empty-state">
-          <h2>No presentations yet</h2>
-          <p>Upload your first presentation via the <a href="/admin" style="color: var(--teal);">admin panel</a>.</p>
+      if (presentations.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <h2>No presentations yet</h2>
+            <p>Upload your first presentation via the <a href="upload.html" style="color: var(--teal); font-weight: 600;">upload page</a>.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Sort by date (newest first)
+      presentations.sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
+
+      // Display presentations
+      container.innerHTML = presentations.map(ppt => `
+        <div class="ppt-card">
+          <div class="ppt-title">${ppt.title}</div>
+          <div class="ppt-desc">${ppt.description || 'No description provided'}</div>
+          <div class="ppt-date">📅 ${new Date(ppt.uploadDate).toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}</div>
+          <a href="#" class="ppt-btn" onclick="downloadPresentation(${ppt.id}); return false;">Download PPT</a>
         </div>
-      `;
-      
+      `).join('');
     } catch (error) {
+      console.error('Error loading presentations:', error);
       container.innerHTML = `
         <div class="empty-state">
-          <h2>Ready for presentations</h2>
-          <p>Go to <a href="/admin" style="color: var(--teal); font-weight: 600;">/admin</a> to upload your first PPT file.</p>
+          <h2>Error loading presentations</h2>
+          <p>Please try refreshing the page.</p>
         </div>
       `;
     }
   }
 
-  function openViewer(pptUrl, title) {
-    const modal = document.getElementById('viewer-modal');
-    const iframe = document.getElementById('ppt-viewer');
+  async function downloadPresentation(id) {
+    const presentations = await getPresentations();
+    const ppt = presentations.find(p => p.id === id);
     
-    // Use Microsoft Office Online Viewer
-    const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(pptUrl)}`;
-    iframe.src = viewerUrl;
-    modal.classList.add('active');
+    if (ppt) {
+      // Create a blob from base64
+      const byteString = atob(ppt.fileData.split(',')[1]);
+      const mimeString = ppt.fileData.split(',')[0].split(':')[1].split(';')[0];
+      const ab = new ArrayBuffer(byteString.length);
+      const ia = new Uint8Array(ab);
+      
+      for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      
+      const blob = new Blob([ab], { type: mimeString });
+      const url = URL.createObjectURL(blob);
+      
+      // Download the file
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = ppt.fileName;
+      a.click();
+      
+      URL.revokeObjectURL(url);
+    }
   }
 
-  function closeViewer() {
-    const modal = document.getElementById('viewer-modal');
-    const iframe = document.getElementById('ppt-viewer');
-    iframe.src = '';
-    modal.classList.remove('active');
-  }
-
-  // Close on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeViewer();
+  // Initialize and load presentations
+  initDB().then(() => {
+    loadPresentations();
+  }).catch(error => {
+    console.error('Database initialization failed:', error);
+    const container = document.getElementById('presentations-container');
+    container.innerHTML = `
+      <div class="empty-state">
+        <h2>Storage Error</h2>
+        <p>Failed to initialize storage. Please try refreshing the page.</p>
+      </div>
+    `;
   });
-
-  // Load presentations on page load
-  loadPresentations();
 </script>
 
 </body>
